@@ -16,9 +16,14 @@ public class ExpenseController {
         this.expenseService = expenseService;
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public List<Expense> list() {
         return expenseService.list();
+    }
+
+    @GetMapping("/total-expense")
+    public Double totalExpense() {
+        return expenseService.totalExpense();
     }
 
     @PostMapping

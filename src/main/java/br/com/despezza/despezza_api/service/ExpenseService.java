@@ -29,4 +29,9 @@ public class ExpenseService {
     public void delete(Long id) {
         expenseRepository.deleteById(id);
     }
+
+    //TotalExpense
+    public Double totalExpense() {
+       return expenseRepository.findTotalExpense();
+    }
 }
