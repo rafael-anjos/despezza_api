@@ -30,4 +30,9 @@ public class RevenueService {
         revenueRepository.deleteById(id);
     }
 
+    //TotalRevenue
+    public Double totalRevenue() {
+        return revenueRepository.findTotalRevenue();
+    }
+
 }

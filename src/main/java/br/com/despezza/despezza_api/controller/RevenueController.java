@@ -16,9 +16,14 @@ public class RevenueController {
         this.revenueService = revenueService;
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public List<Revenue> list(){
         return revenueService.list();
+    }
+
+    @GetMapping("/total-revenue")
+    public Double totalRevenue() {
+        return revenueService.totalRevenue();
     }
 
     @PostMapping
