@@ -1,0 +1,1 @@
+In this my first project, i create a web project with Java Spring, performing small tasks such as creating, reading, updating, and deleting data (CRUD). It is a web project that interacts with a MySQL database, and is intended solely for studying and applying knowledge.
