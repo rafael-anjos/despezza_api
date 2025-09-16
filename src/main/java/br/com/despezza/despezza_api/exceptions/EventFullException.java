@@ -3,7 +3,7 @@ package br.com.despezza.despezza_api.exceptions;
 public class EventFullException extends RuntimeException{
 
     public EventFullException() {
-        super("Event is sold out.");
+        super("Internal Error.");
     }
 
     public EventFullException(String message) {super(message);}

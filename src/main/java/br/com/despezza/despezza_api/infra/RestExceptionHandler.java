@@ -1,6 +1,7 @@
 package br.com.despezza.despezza_api.infra;
 
 import br.com.despezza.despezza_api.exceptions.EventFullException;
+import br.com.despezza.despezza_api.exceptions.EventMethodNotAllowedException;
 import br.com.despezza.despezza_api.exceptions.EventNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,12 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(EventFullException.class)
     private ResponseEntity<String> eventFullErrorHandler(EventFullException exception) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Event is sold out.");
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Error.");
     }
+
+    @ExceptionHandler(EventMethodNotAllowedException.class)
+    private ResponseEntity<String> eventNotAllowed(EventMethodNotAllowedException exception) {
+        return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).body("Event not allowed.");
+    }
+
 }
